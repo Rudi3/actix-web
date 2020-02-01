@@ -570,7 +570,7 @@ fn create_tcp_listener(
         net::SocketAddr::V4(_) => TcpBuilder::new_v4()?,
         net::SocketAddr::V6(_) => TcpBuilder::new_v6()?,
     };
-    builder.reuse_address(true)?;
+    builder.reuse_address(false)?;
     builder.bind(addr)?;
     Ok(builder.listen(backlog)?)
 }
