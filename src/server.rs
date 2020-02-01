@@ -564,7 +564,7 @@ fn create_tcp_listener(
     addr: net::SocketAddr,
     _backlog: i32,
 ) -> io::Result<net::TcpListener> {
-    Ok(net::TcpListener::bind(addr)?)
+    net::TcpListener::bind(addr)
 }
 
 #[cfg(feature = "openssl")]
